@@ -29,8 +29,10 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
 sudo dnf install libxcrypt-compat.x86_64 -y
-
 sudo dnf install google-cloud-cli kubectl -y
+mkdir -p ~/.kube
+touch ~/.kube/config
+chmod 600 ~/.kube/config
 
 
 #  zsh-kubectl-prompt
@@ -70,7 +72,23 @@ pip install requests-credssp
 pip install hvac
 
 
-#  install terraform
+#  install terraform via tfenv
+git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
+echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.zprofile
+source ~/.zprofile
+tfenv use 1.6.6
+
+
+#  install fzf
+sudo yum instal fzf -y
+git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
+
+
+#  install k9s
+sudo yum install https://github.com/derailed/k9s/releases/download/v0.30.1/k9s_linux_amd64.rpm -y
+
+
+# install kubecolor
 
 
 
