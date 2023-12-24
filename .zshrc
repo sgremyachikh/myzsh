@@ -218,7 +218,7 @@ autoload -U colors; colors
 source ~/.oh-my-zsh/custom/plugins/zsh-kubectl-prompt/kubectl.zsh
 function right_prompt() {
   local color="yellow"
-  if [[ -z "$(echo $ZSH_KUBECTL_USER | grep gke_altenar)" ]]; then
+  if [[ -z "$(echo $ZSH_KUBECTL_USER | grep gke_)" ]]; then
     color=green
   fi
   if [[ "$ZSH_KUBECTL_USER" =~ "admin" ]]; then
