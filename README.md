@@ -50,7 +50,7 @@ chmod 700 get_helm.sh
 # install govc
 # extract govc binary to /usr/local/bin
 # note: the "tar" command must run with root permissions
-sudo curl -L -o - "https://github.com/vmware/govmomi/releases/latest/download/govc_$(uname -s)_$(uname -m).tar.gz" | sudo tar -C /usr/local/bin -xvzf - govc
+curl -L -o - "https://github.com/vmware/govmomi/releases/latest/download/govc_$(uname -s)_$(uname -m).tar.gz" | sudo tar -C /usr/local/bin -xvzf - govc
 
 
 #  install ansible
@@ -90,7 +90,7 @@ sudo yum install https://github.com/derailed/k9s/releases/download/v0.30.1/k9s_l
 
 # install kubecolor
 sudo yum install go -y
-go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
+curl -L -o - "https://github.com/hidetatz/kubecolor/releases/download/v0.0.25/kubecolor_0.0.25_Linux_x86_64.tar.gz" | sudo tar -C /usr/local/bin -xvzf - kubecolor
 
 
 #  replace your ~/.zshrc with current
