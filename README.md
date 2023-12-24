@@ -89,7 +89,8 @@ sudo yum install https://github.com/derailed/k9s/releases/download/v0.30.1/k9s_l
 
 
 # install kubecolor
-
+sudo yum install go -y
+go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
 
 
 #  replace your ~/.zshrc with current
